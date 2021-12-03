@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVHS Creative Writing Club</title>
+    <style>
+      .loader--container {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-height: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: var(--secondary-color);
+      }
+      .loader--bar {
+        width: 20%;
+        height: 5px;
+        background-color: var(--accent-color-variant);
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        left: 0;
+        animation: loader-bar 1s ease-in-out infinite;
+      }
+
+      @keyframes loader-bar {
+        0% {
+          left: -20%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      .loader--quote {
+        padding: 0.5em;
+        color: white;
+        background-color: var(--secondary-color);
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.2em;
+        min-height: 200px;
+      }
+      html {
+        --primary-color: #ffffff;
+        --primary-color-variant: #f2f2f2;
+        --secondary-color: #000000;
+        --secondary-color-variant: #2c3e50;
+        --accent-color: #ffb457;
+        --accent-color-variant: hsl(33, 75%, 75%);
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        height: 100%;
+      }
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader--container" id="index-loader">
+      <div class="loader--bar"></div>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>
